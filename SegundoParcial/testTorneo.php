@@ -30,18 +30,30 @@ $objE12 = neW Equipo("Equipo Doce", "Cap.Doce",11,$catMayores);
 
 
 
-$objPartido1 = new Futbol (14, "2024-05-07 ", $objE1, 3 , $objE2, 2);
-$objPartido2 = new Basquet (15, "2024-05-07 ", $objE3, 3 , $objE4, 2, 4);
+$objPartidoFutbol = new Futbol (14, "2024-05-07 ", $objE1, 3 , $objE2, 2);
+$objPartidoBasquet = new Basquet (15, "2024-05-07 ", $objE3, 3 , $objE4, 2, 4);
 
-echo $objPartido;
-echo $objPartido1->darEquipoGanador();
-echo $objPartido1->coeficientePartido();
+$colPartidos = [];
+$importePremio = 10;
+$objTorneo = new Torneo ($colPartidos , $importePremio);
 
-echo $objPartido2->darEquipoGanador();
-echo $objPartido2->coeficientePartido();
-// $colPartidos = [];
-// $importePremio = 10;
-// $objTorneo = new Torneo ($colPartidos , $importePremio);
 
-// echo $objTorneo->ingresarPartido($objE1, $objE2, "2024", "futbol");
+echo $objTorneo->ingresarPartido($objE1, $objE2, "2024", "futbol");
+echo $objTorneo->ingresarPartido($objE11, $objE11, '2024-05-23', 'basquetbol'); 
+echo $objTorneo->ingresarPartido($objE9, $objE10, '2024-05-25', 'basquetbol'); 
+
+echo $objPartidoFutbol;
+echo $objPartidoFutbol->darEquipoGanador();
+echo $objPartidoFutbol->coeficientePartido();
+
+echo $objPartidoBasquet;
+echo $objPartidoBasquet->darEquipoGanador();
+echo $objPartidoBasquet->coeficientePartido();
+
+echo $objTorneo->calcularPremioPartido(1);
+echo $objTorneo->darGanadores('futbol');
+echo $objTorneo->darGanadores('basquetbol');
+
+echo $objTorneo;
+
 ?>

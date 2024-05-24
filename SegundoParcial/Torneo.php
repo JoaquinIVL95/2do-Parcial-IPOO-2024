@@ -83,12 +83,13 @@ Class Torneo{
 
     public function calcularPremioPartido($partido) {
         $ganador = $partido->darEquipoGanador();
+        $premio = [];
         if ($ganador !== null) {
             $coeficiente = $partido->coeficientePartido();
             $premioPartido = $coeficiente * $this->importePremio;
-            return ['equipoGanador' => $ganador, 'premioPartido' => $premioPartido];
+            $premio =  ['equipoGanador' => $ganador, 'premioPartido' => $premioPartido];
         }
-        return null;
+        return $premio;
     }
 
 
